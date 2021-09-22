@@ -35,6 +35,26 @@ class AddStudent extends Component {
     }
 
     render()  {
+	/*const icolumns = [
+      {
+        field: 'id',
+        headerName: 'StudentID',
+        width: 200,
+        renderCell: (params) => (
+          <div>
+            <Radio
+              checked={params.row.id == this.state.selected}
+              onChange={this.onRadioClick}
+              value={params.row.id}
+              color="default"
+              size="small"
+            />
+            { SEMESTER_LIST[params.row.id].year }
+          </div>
+        )
+      },
+      { field: 'email', headerName: 'Email', width: 200 }
+      ];*/
       return (
           <div>
             <Button variant="outlined" color="primary" style={{margin: 10}} onClick={this.handleClickOpen}>
