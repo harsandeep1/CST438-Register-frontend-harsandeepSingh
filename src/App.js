@@ -1,8 +1,8 @@
-   
 import './App.css';
 import SchedList from './components/SchedList';
+import StudentList from './components/StudentList';
 import Semester from './components/Semester';
-import StdList from './components/StdList';
+import Login from './components/Login';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -10,9 +10,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
        <Switch>
-        <Route exact path='/' component={Semester} />
+       <Route exact path='/' component={Login} />
+        <Route exact path='/semester' component={Semester} />
         <Route path='/schedule' component={SchedList} />
-        <Route path='/student' component={StdList} />
+        <Route path='/students' component={StudentList} /> 
        </Switch>
       </BrowserRouter>
     </div>

@@ -14,13 +14,13 @@ class Semester extends Component {
       super(props);
       this.state = {selected: SEMESTER_LIST.length-1 };
     }
-
+ 
    onRadioClick = (event) => {
     console.log("Semester.onRadioClick "+JSON.stringify(event.target.value));
     this.setState({selected: event.target.value});
   }
-
-  render() {
+  
+  render() {    
       const icolumns = [
       {
         field: 'id',
@@ -40,8 +40,8 @@ class Semester extends Component {
         )
       },
       { field: 'name', headerName: 'Semester', width: 200 }
-      ];
-
+      ];       
+       
     return (
        <div>
          <AppBar position="static" color="default">
@@ -54,19 +54,14 @@ class Semester extends Component {
          <div align="left" >
               <div style={{ height: 400, width: '100%', align:"left"   }}>
                 <DataGrid   rows={SEMESTER_LIST} columns={icolumns} />
-              </div>
-              <Button component={Link}
-                      to={{pathname:'/schedule' ,
-                      year:SEMESTER_LIST[this.state.selected].year,
-                      semester:SEMESTER_LIST[this.state.selected].name}}
+              </div>                
+              <Button component={Link} 
+                      to={{pathname:'/schedule' , 
+                      year:SEMESTER_LIST[this.state.selected].year, 
+                      semester:SEMESTER_LIST[this.state.selected].name}} 
                 variant="outlined" color="primary" style={{margin: 10}}>
                 Get Schedule
               </Button>
-             <Button component={Link}
-                     to={{pathname:'/student'}}
-                     variant="outlined" color="primary" style={{margin: 10}}>
-                 Student List
-             </Button>
           </div>
       </div>
     )
